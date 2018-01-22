@@ -1,0 +1,9 @@
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.exe.config
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.exe
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.pdb
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csprojResolveAssemblyReference.cache
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.Form1.resources
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.Properties.Resources.resources
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.GenerateResource.Cache
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.exe
+F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.pdb
