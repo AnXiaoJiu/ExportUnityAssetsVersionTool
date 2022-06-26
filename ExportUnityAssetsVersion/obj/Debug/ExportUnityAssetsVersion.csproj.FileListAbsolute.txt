@@ -7,3 +7,14 @@ F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug
 F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.GenerateResource.Cache
 F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.exe
 F:\VSProject\ShouLin\ExportUnityAssetsVersion\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.pdb
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.exe.config
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.exe
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\bin\Debug\ExportUnityAssetsVersion.pdb
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.Form1.resources
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.Properties.Resources.resources
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.GenerateResource.cache
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.exe
+C:\Users\user\Desktop\ExportUnityAssetsVersionTool\ExportUnityAssetsVersion\obj\Debug\ExportUnityAssetsVersion.pdb

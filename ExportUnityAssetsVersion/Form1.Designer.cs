@@ -59,6 +59,7 @@
             this.outpath.Name = "outpath";
             this.outpath.Size = new System.Drawing.Size(391, 21);
             this.outpath.TabIndex = 2;
+            this.outpath.Text = "点击Export按钮选择要导出文件所在文件夹";
             // 
             // Form1
             // 
@@ -68,8 +69,8 @@
             this.Controls.Add(this.outpath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Tool";
+            this.Text = "Tool";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 
 namespace ExportUnityAssetsVersion
 {
@@ -22,6 +23,8 @@ namespace ExportUnityAssetsVersion
             public float vid;
             [DataMember]
             public Info[] infos;
+            [DataMember]
+            public string vMD5;
         }
          [DataContract]
         public class Info
@@ -32,6 +35,8 @@ namespace ExportUnityAssetsVersion
             public string path;
              [DataMember]
             public string version;
+            [DataMember]
+            public string md5;
         }
 
 
@@ -50,6 +55,7 @@ namespace ExportUnityAssetsVersion
             FolderBrowserDialog path = new FolderBrowserDialog();
             path.ShowDialog();
             root = path.SelectedPath;
+            if (string.Equals(root, string.Empty)) return;
             this.outpath.Text = "正在导出...";
 
             //2. 遍历文件夹下的所有文件
@@ -61,19 +67,24 @@ namespace ExportUnityAssetsVersion
             {
                 configinfo = new Configinfo();
                 configinfo.vid = 1.0f;
+                configinfo.vMD5 = string.Empty;
                 if(configinfo.infos == null)
                 {
                     configinfo.infos = new Info[pathQueue.Count];
                     for (int i = 0; i < configinfo.infos.Length; i++)
                     {
-                        configinfo.infos[i] = new Info();
-                        configinfo.infos[i].id = "000" + (i+1).ToString();
-                        configinfo.infos[i].path = pathQueue.Dequeue();
-                        configinfo.infos[i].version = "1.0";
+                        string p = pathQueue.Dequeue();
+                        Info info = new Info();
+                        info.id = "000" + (i+1).ToString();
+                        info.path = p;
+                        info.version = "1.0";
+                        string pp = Path.Combine(rootFolder.FullName, p);
+                        info.md5 = Md5File(pp);
+                        configinfo.infos[i] = info;
                     }
                 }
             }
-            //4.反序列化
+            //4.序列化
             DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(Configinfo));
             MemoryStream msObj = new MemoryStream();
             //将序列化之后的Json格式数据写入流中
@@ -91,10 +102,28 @@ namespace ExportUnityAssetsVersion
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 string fileName = sfd.FileName;
-
                 File.WriteAllText(fileName, end);
-
-                this.outpath.Text = "导出路径:" + fileName;
+                this.outpath.Text = "导出路径:" + fileName; string folder = Path.GetDirectoryName(fileName);
+                string versionFileMD5 = Md5File(fileName);//计算版本文件的md5
+                configinfo.vMD5 = versionFileMD5;
+                //6.再次序列化写入文件
+                js = new DataContractJsonSerializer(typeof(Configinfo));
+                msObj = new MemoryStream();
+                js.WriteObject(msObj, configinfo);
+                msObj.Position = 0;
+                sr = new StreamReader(msObj, Encoding.UTF8);
+                json = sr.ReadToEnd();
+                sr.Close();
+                msObj.Close();
+                end = json.Replace(@"\", "");
+                //Console.WriteLine(end);
+                File.WriteAllText(fileName, end);
+                if (MessageBox.Show("导出成功", "Tool", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    System.Diagnostics.Process.Start("explorer.exe", folder);
+                    Close();
+                }
+               
             }
 
         }
@@ -131,7 +160,31 @@ namespace ExportUnityAssetsVersion
             }
         }
 
+
+        private string Md5File(string file)
+        {
+            using (FileStream stream = File.OpenRead(file))
+            {
+                MD5 md5 = MD5.Create();
+                byte[] data = md5.ComputeHash(stream);
+                var sb = new StringBuilder();
+
+                foreach (var b in data)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+                return sb.ToString().ToLower();
+            }
+        }
+
+        private void Serialize()
+        {
+           
+        }
+
     }
 
+
+   
 
 }
